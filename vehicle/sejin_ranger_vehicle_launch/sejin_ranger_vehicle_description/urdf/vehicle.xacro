@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- load parameter -->
+  <xacro:property name="vehicle_info" value="${xacro.load_yaml('$(find sejin_ranger_vehicle_description)/config/vehicle_info.param.yaml')}"/>
+  <xacro:property name="p" value="${vehicle_info['/**']['ros__parameters']}"/>
+  
+  <!-- vehicle body -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="${(p['wheel_base'] + p['front_overhang'] - p['rear_overhang'])/2.0} 0 0.1725" rpy="0 0 0"/>
+      <geometry>
+        <box size="${p['front_overhang'] + p['wheel_base'] + p['rear_overhang']} ${p['wheel_tread'] + p['left_overhang'] + p['right_overhang']} 0.345"/>
+      </geometry>
+      <material name="body_gray"><color rgba="0.6 0.6 0.6 1.0"/></material>
+    </visual>
+  </link>
+</robot>

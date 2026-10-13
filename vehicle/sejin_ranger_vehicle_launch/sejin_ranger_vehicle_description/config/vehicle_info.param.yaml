@@ -1,0 +1,12 @@
+/**:
+  ros__parameters:
+    wheel_radius: 0.08 # 나중에 실측값 넣
+    wheel_width: 0.08 # 나중에 실측값 넣
+    wheel_base: 0.247 # 계산상 0.494인데 4륜 조향이라 앞뒤 바퀴 같이 쓰는 거 고려 
+    wheel_tread: 0.364
+    front_overhang: 0.113
+    rear_overhang: 0.360 # 베이스 이동으로 같이 변경 
+    left_overhang: 0.068
+    right_overhang: 0.068
+    vehicle_height: 0.4863
+    max_steer_angle: 0.2998 # 안전장치 
